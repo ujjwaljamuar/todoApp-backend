@@ -12,14 +12,15 @@ app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/", Routes);
-
-const PORT = 8080;
-
-Connection();
-
 app.get('/', (req, res)=> {
   res.json('Server is running successfully');
 });
+
+
+const PORT = process.env.PORT || 8080;
+
+Connection();
+
 
 app.listen(PORT, () =>
   console.log(`server is running successfully on PORT: ${PORT}`)
