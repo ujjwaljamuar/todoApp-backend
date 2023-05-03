@@ -11,11 +11,12 @@ app.use(cors());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/", Routes);
-app.get('/', (req, res)=> {
-  res.json('Server is running successfully');
+app.get("/", (req, res) => {
+  res.json("Backend Server is running ...");
 });
 
+
+app.use("/", Routes);
 
 const PORT = process.env.PORT || 8080;
 
